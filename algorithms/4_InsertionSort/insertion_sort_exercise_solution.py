@@ -10,7 +10,7 @@ def place_to_insert(array, key):
 
 def insert_to_sorted(array, key):
     index = place_to_insert(array, key)
-    return array[0:index]+[key]+array[index:]
+    return array[:index] + [key] + array[index:]
 
 
 if __name__ == "__main__":

@@ -18,7 +18,7 @@ def partition(elements, start, end):
     pivot = elements[end]
     p_index = start
 
-    for i in range(start, end):
+    for i in range(p_index, end):
         if elements[i] <= pivot:
             swap(i, p_index, elements)
             p_index += 1

@@ -31,9 +31,9 @@ def is_match(ch1, ch2):
 def is_balanced(s):
     stack = Stack()
     for ch in s:
-        if ch=='(' or ch=='{' or ch == '[':
+        if ch in ['(', '{', '[']:
             stack.push(ch)
-        if ch==')' or ch=='}' or ch == ']':
+        if ch in [')', '}', ']']:
             if stack.size()==0:
                 return False
             if not is_match(ch,stack.pop()):

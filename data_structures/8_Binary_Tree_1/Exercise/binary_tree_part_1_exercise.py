@@ -13,11 +13,10 @@ class BinarySearchTreeNode:
                 self.left.add_child(data)
             else:
                 self.left = BinarySearchTreeNode(data)
+        elif self.right:
+            self.right.add_child(data)
         else:
-            if self.right:
-                self.right.add_child(data)
-            else:
-                self.right = BinarySearchTreeNode(data)
+            self.right = BinarySearchTreeNode(data)
 
 
     def search(self, val):
@@ -25,16 +24,9 @@ class BinarySearchTreeNode:
             return True
 
         if val < self.data:
-            if self.left:
-                return self.left.search(val)
-            else:
-                return False
-
+            return self.left.search(val) if self.left else False
         if val > self.data:
-            if self.right:
-                return self.right.search(val)
-            else:
-                return False
+            return self.right.search(val) if self.right else False
 
     def in_order_traversal(self):
         elements = []
@@ -69,14 +61,10 @@ class BinarySearchTreeNode:
         return elements
 
     def find_max(self):
-        if self.right is None:
-            return self.data
-        return self.right.find_max()
+        return self.data if self.right is None else self.right.find_max()
 
     def find_min(self):
-        if self.left is None:
-            return self.data
-        return self.left.find_min()
+        return self.data if self.left is None else self.left.find_min()
 
     def calculate_sum(self):
         left_sum = self.left.calculate_sum() if self.left else 0

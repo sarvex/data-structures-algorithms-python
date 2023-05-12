@@ -8,8 +8,7 @@ def bfs(data, start, visited=set()):
             print(current_node, end=" ")
         visited.add(current_node)
 
-        for i in data[current_node] - visited:
-            queue.append(i)
+        queue.extend(iter(data[current_node] - visited))
     return
 
 

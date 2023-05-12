@@ -2,10 +2,14 @@ from util import time_it
 
 @time_it
 def linear_search(numbers_list, number_to_find):
-    for index, element in enumerate(numbers_list):
-        if element == number_to_find:
-            return index
-    return -1
+    return next(
+        (
+            index
+            for index, element in enumerate(numbers_list)
+            if element == number_to_find
+        ),
+        -1,
+    )
 
 @time_it
 def binary_search(numbers_list, number_to_find):

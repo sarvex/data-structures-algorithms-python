@@ -15,7 +15,7 @@ class LinkedList:
         itr = self.head
         llstr = ''
         while itr:
-            llstr += str(itr.data) + ' --> '
+            llstr += f'{str(itr.data)} --> '
             itr = itr.next
         print(llstr)
 

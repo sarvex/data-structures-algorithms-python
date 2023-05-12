@@ -8,9 +8,8 @@ def bfs(data, start, end, visited=[]):
             return
         visited.append(current_node)
 
-        for i in data[current_node] - set(visited):
-            queue.append(i)
-    print("Path does not exist!")    
+        queue.extend(iter(data[current_node] - set(visited)))
+    print("Path does not exist!")
     return
 
 

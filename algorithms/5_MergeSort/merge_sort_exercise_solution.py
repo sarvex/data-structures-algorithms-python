@@ -5,11 +5,9 @@ def merge_sort(elements, key, descending=False):
     if size == 1:
         return elements
 
-    left_list = merge_sort(elements[0:size//2], key, descending)
+    left_list = merge_sort(elements[:size//2], key, descending)
     right_list = merge_sort(elements[size//2:], key, descending)
-    sorted_list = merge(left_list, right_list, key, descending)
-
-    return sorted_list
+    return merge(left_list, right_list, key, descending)
 
     
 def merge(left_list, right_list, key, descending=False):

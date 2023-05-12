@@ -27,7 +27,7 @@ if __name__ == '__main__':
         {'First Name': 'Aahana', 'Last Name': 'Arora'}
     ]
 
-    print(f'Given unsorted array:', *elements, sep='\n')
+    print('Given unsorted array:', *elements, sep='\n')
     multilevel_selection_sort(
         elements, ['First Name', 'Last Name'])
-    print(f'Array after Multi-Level Sorting:', *elements, sep='\n')
+    print('Array after Multi-Level Sorting:', *elements, sep='\n')

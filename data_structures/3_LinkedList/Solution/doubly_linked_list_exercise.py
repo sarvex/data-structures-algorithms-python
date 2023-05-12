@@ -16,7 +16,7 @@ class DoublyLinkedList:
         itr = self.head
         llstr = ''
         while itr:
-            llstr += str(itr.data) + ' --> '
+            llstr += f'{str(itr.data)} --> '
             itr = itr.next
         print(llstr)
 
@@ -29,7 +29,7 @@ class DoublyLinkedList:
         itr = last_node
         llstr = ''
         while itr:
-            llstr += itr.data + '-->'
+            llstr += f'{itr.data}-->'
             itr = itr.prev
         print("Link list in reverse: ", llstr)
 
@@ -50,13 +50,13 @@ class DoublyLinkedList:
         return count
 
     def insert_at_begining(self, data):
-        if self.head == None:
+        if self.head is None:
             node = Node(data, self.head, None)
-            self.head = node
         else:
             node = Node(data, self.head, None)
             self.head.prev = node
-            self.head = node
+
+        self.head = node
 
     def insert_at_end(self, data):
         if self.head is None:

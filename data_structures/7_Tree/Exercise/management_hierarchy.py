@@ -16,14 +16,14 @@ class TreeNode:
 
     def print_tree(self, property_name):
         if property_name == 'both':
-            value = self.name + " (" + self.designation + ")"
+            value = f"{self.name} ({self.designation})"
         elif property_name == 'name':
             value = self.name
         else:
             value = self.designation
 
         spaces = ' ' * self.get_level() * 3
-        prefix = spaces + "|__" if self.parent else ""
+        prefix = f"{spaces}|__" if self.parent else ""
         print(prefix + value)
         if self.children:
             for child in self.children:

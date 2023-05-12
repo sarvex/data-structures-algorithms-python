@@ -13,9 +13,7 @@ def shell_sort(arr):
                 arr[j] = arr[j-gap]
                 j -= gap
             arr[j] = temp
-        index_to_delete=list(set(index_to_delete))
-        index_to_delete.sort()
-        if index_to_delete:
+        if index_to_delete := sorted(set(index_to_delete)):
             for i in index_to_delete[-1::-1]:
                 del arr[i]
         div *= 2

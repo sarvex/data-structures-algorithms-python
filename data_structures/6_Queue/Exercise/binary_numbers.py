@@ -27,11 +27,11 @@ def produce_binary_numbers(n):
     numbers_queue = Queue()
     numbers_queue.enqueue("1")
 
-    for i in range(n):
+    for _ in range(n):
         front = numbers_queue.front()
         print("   ", front)
-        numbers_queue.enqueue(front + "0")
-        numbers_queue.enqueue(front + "1")
+        numbers_queue.enqueue(f"{front}0")
+        numbers_queue.enqueue(f"{front}1")
 
         numbers_queue.dequeue()
 
